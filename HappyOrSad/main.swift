@@ -15,3 +15,41 @@ var rawInput = readLine()
 print("You said:")
 print(rawInput)
 
+// Make sure the input is not nil
+// (unwrap the optonial)
+guard let input = rawInput else {
+    //If we got here, input is nil, so quit program
+    exit(9) // exit with error code 9
+}
+
+// Print the verified input
+print(input)
+
+// Loop over each character of the input string
+var happyCount = 0
+var sadCount = 0
+for individualCharacter in input {
+    
+    //DEBUG: What character are we looking at now?
+    print(individualCharacter)
+    
+    // Is the character happy,sad, or neither?
+    if individualCharacter == "😃" || individualCharacter == "☺️" || individualCharacter == "😄" || individualCharacter == "🙂"{
+        happyCount += 1
+    } else if individualCharacter == "😔" || individualCharacter == "☹️" || individualCharacter == "😕" || individualCharacter == "🙁"{
+        sadCount += 1
+    }
+    
+}
+
+// OUTPUT
+if happyCount > sadCount {
+    print("Happy")
+} else if happyCount == 0 && sadCount == 0 {
+    print("None")
+} else if happyCount == sadCount {
+    print("Unsure")
+} else if happyCount < sadCount {
+    print("Sad")
+}
+

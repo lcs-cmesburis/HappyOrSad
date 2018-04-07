@@ -34,10 +34,13 @@ for individualCharacter in input {
     print(individualCharacter)
     
     // Is the character happy,sad, or neither?
-    if individualCharacter == "😃" || individualCharacter == "☺️" || individualCharacter == "😄" || individualCharacter == "🙂" || individualCharacter == "😊" {
+    switch individualCharacter {
+    case "😃" , "☺️" , "😄" , "🙂" , "😊" :
         happyCount += 1
-    } else if individualCharacter == "😔" || individualCharacter == "☹️" || individualCharacter == "😕" || individualCharacter == "🙁"{
+    case "😔" , "☹️" , "😕" , "🙁" :
         sadCount += 1
+    default :
+        break // do nothing
     }
     
 }
